@@ -202,5 +202,8 @@
 (define slack-users-list (create-api-func "users.list" (token) (presence)))
 (define slack-users-setActive (create-api-func "users.setActive" (token) ()))
 (define slack-users-setPresence (create-api-func "users.setPresence" (token presence) ()))
+
+; https://api.slack.com/methods/users.profile.get
 (define slack-users-profile-get (create-api-func "users.profile.get" (token) (include_labels user)))
+; https://api.slack.com/methods/users.profile.set
 (define slack-users-profile-set (create-api-func "users.profile.set" (token) (name profile user value)))
