@@ -31,7 +31,9 @@
          slack-usergroups-enable slack-usergroups-list slack-usergroups-update)
 (provide slack-usergroups-users-list slack-usergroups-users-update)
 (provide slack-users-getPresence slack-users-info slack-users-list
-         slack-users-setActive slack-users-setPresence)
+         slack-users-setActive slack-users-setPresence
+         slack-users-profile-get slack-users-profile-set)
+
 
 
 (require json)
@@ -200,3 +202,5 @@
 (define slack-users-list (create-api-func "users.list" (token) (presence)))
 (define slack-users-setActive (create-api-func "users.setActive" (token) ()))
 (define slack-users-setPresence (create-api-func "users.setPresence" (token presence) ()))
+(define slack-users-profile-get (create-api-func "users.profile.get" (token) (include_labels user)))
+(define slack-users-profile-set (create-api-func "users.profile.set" (token) (name profile user value)))
